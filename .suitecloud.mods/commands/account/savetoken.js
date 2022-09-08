@@ -10,7 +10,7 @@ module.exports = {
         args = entryPoints.onError(args);
         return args;
     },
-    onCompleted: () => {
+    onCompleted: (args) => {
         args = entryPoints.onCompleted(args);
         return args;
     }
