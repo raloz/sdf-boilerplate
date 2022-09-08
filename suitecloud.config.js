@@ -1,6 +1,8 @@
-const { account } = require('./.suitecloud.mods/commands');
+const { account } = require("./.suitecloud.mods/commands");
 
 module.exports = {
     defaultProjectFolder: "src",
-    commands: {},
+    commands: {
+        "account:savetoken": account.saveToken,
+    },
 };
