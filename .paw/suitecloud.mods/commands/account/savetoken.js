@@ -1,5 +1,5 @@
-const { removeAccountCredentials } = require("../modules/credentials");
-const { entryPoints } = require("../../entrypoints");
+const { removeAccountCredentials } = require("../../modules/credentials");
+const { entryPoints } = require("../entrypoints");
 
 module.exports = {
     beforeExecuting: (args) => {
