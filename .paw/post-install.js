@@ -1,10 +1,11 @@
 const { createInterface } = require("readline");
 const { copyFileSync, readFile, writeFileSync } = require("fs");
+const { colors, homedir } = require("./constants");
 const { join } = require("path");
 
 const __maindir__ = process.cwd();
 const { env, platform } = process;
-const { NODE_ENV, HOME } = env;
+const { NODE_ENV } = env;
 
 //(creates a .env file)
 copyFileSync(join(__maindir__, ".paw", "templates", "env.template"), join(__maindir__, ".env"))
@@ -15,19 +16,19 @@ if (!NODE_ENV && (platform === "darwin" || platform === "linux" || platform === 
     readerInput.question("Do you want install the vscode keybindings ? (yes/no) ", function (response) {
         if (response.toLowerCase() === "yes") {
             const keybiding = {
-                darwin: `${HOME}/Library/Application\ Support/Code/User/keybindings.json`,
-                linux: `${HOME}/.config/Code/User/keybindings.json`,
-                win32: `${HOME}\\%APPDATA%\\Code\\User\\keybindings.json`
+                darwin: `${homedir}/Library/Application\ Support/Code/User/keybindings.json`,
+                linux: `${homedir}/.config/Code/User/keybindings.json`,
+                win32: `${homedir}\\%APPDATA%\\Code\\User\\keybindings.json`
             }
             readFile(keybiding[platform], "utf-8", (err, data) => {
                 if (err) {
-                    console.log(err.message);
+                    console.log(colors.error, err.message);
                     return;
                 }
-                try{
+                try {
                     data = JSON.parse(data.replace(/\/\/.*/g, '').replaceAll('\n', '').replace(/\s{1,}/g, ''));
-                }catch(e){
-                    console.error("Your keybidings it's malformed, can't add paw keybidings :/");
+                } catch (e) {
+                    console.error(colors.error, "Your keybidings it's malformed, can't add paw keybidings :/");
                     return;
                 }
                 const keybidingFile = [
