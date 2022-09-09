@@ -1,4 +1,4 @@
-const { account } = require("./.suitecloud.mods/commands");
+const { account } = require("./.paw/suitecloud.mods/commands");
 
 module.exports = {
     defaultProjectFolder: "src",

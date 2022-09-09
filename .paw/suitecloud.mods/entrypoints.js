@@ -1,5 +1,5 @@
-const { colors } = require("./constants");
-const { author, version, defaultAuthId, timestamp } = require("./config");
+const { colors } = require("../constants");
+const { author, version, defaultAuthId, timestamp } = require("../config");
 
 module.exports = {
     entryPoints: {
