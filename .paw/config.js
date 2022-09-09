@@ -1,4 +1,4 @@
-const {readFileSync} = require("fs");
+const { readFileSync } = require("fs");
 const { colors } = require("./constants");
 const { author, name, version } = loadConfigFromFile("package.json");
 const { defaultAuthId } = loadConfigFromFile("project.json");
@@ -9,7 +9,7 @@ module.exports = {
     version,
     defaultAuthId, 
     timestamp: new Date().toLocaleTimeString()
-}
+};
 
 function loadConfigFromFile(fileName) {
     try {
