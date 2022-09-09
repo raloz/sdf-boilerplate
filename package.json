@@ -30,40 +30,24 @@
 			"amd": true,
 			"es2021": true
 		},
-		"extends": [
-			"prettier"
-		],
-		"plugins": [
-			"prettier"
-		],
-		"parserOptions": {
-			"ecmaVersion": "latest"
-		},
+		"extends": ["prettier"],
+		"plugins": ["prettier"],
+		"parserOptions": { "ecmaVersion": "latest" },
 		"rules": {
-			"object-curly-spacing": [
-				2,
-				"always"
-			],
-			"object-property-newline": [
-				"error",
-				{
-					"allowAllPropertiesOnSameLine": false
+			"object-curly-spacing": [2, "always"],
+			"object-property-newline": ["error", { "allowAllPropertiesOnSameLine": true }],
+			"object-curly-newline": ["warn", {
+				"ObjectExpression": {
+					"multiline": true,
+					"minProperties": 3 
+				},
+				"ObjectPattern": { "multiline": true },
+				"ImportDeclaration": "never",
+				"ExportDeclaration": {
+					"multiline": true,
+					"minProperties": 2 
 				}
-			],
-			"object-curly-newline": [
-				"warn",
-				{
-					"ObjectExpression": "always",
-					"ObjectPattern": {
-						"multiline": true
-					},
-					"ImportDeclaration": "never",
-					"ExportDeclaration": {
-						"multiline": true,
-						"minProperties": 0
-					}
-				}
-			],
+			}],
 			"indent": [
 				"warn",
 				4
