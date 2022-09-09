@@ -11,6 +11,6 @@ const credentials = {
     renameAccountCredentials: (namefile) => {
         
     }
-}
+};
 
 module.exports = credentials;

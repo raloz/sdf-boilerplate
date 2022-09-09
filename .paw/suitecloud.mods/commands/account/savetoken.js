@@ -1,4 +1,5 @@
-const { removeAccountCredentials } = require("../../modules/credentials");
+const { removeAccountCredentials } = require("../../modules/credentials-file");
+const { createProjectFile, copyProjectFileAsTemp } = require("../../modules/project-file");
 const { entryPoints } = require("../entrypoints");
 
 module.exports = {
@@ -7,7 +8,8 @@ module.exports = {
         const { authid } = args.arguments;
 
         //@comments: se elimina la credencial anterior de la instancia que se está autenticando
-        removeAccountCredentials(authid)
+        removeAccountCredentials(authid);
+        copyProjectFileAsTemp();
         return args;
     },
     onError: (args) => {
@@ -16,6 +18,9 @@ module.exports = {
     },
     onCompleted: (args) => {
         args = entryPoints.onCompleted(args);
+        const { _status, _authId, _accountInfo } = args;
+        _status === "SUCCESS" && createProjectFile(_authId, _accountInfo);
+
         return args;
     }
 };

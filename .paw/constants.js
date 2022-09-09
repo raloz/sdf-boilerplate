@@ -1,4 +1,4 @@
-const { homedir } = require("os");
+const { homedir, tmpdir } = require("os");
 
 module.exports = {
     colors: {
@@ -7,5 +7,6 @@ module.exports = {
         info: "\x1b[36m%s\x1b[0m",
         highlight: "\x1b[35m%s\x1b[0m",
     },
-    homedir: homedir()
-}
+    homedir: homedir(),
+    tmpdir: tmpdir(),
+};
