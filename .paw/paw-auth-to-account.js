@@ -1,6 +1,6 @@
 require("dotenv").config();
-const { colors } = require("./constants");
 const { spawnSync } = require("child_process");
+const { colors } = require("./constants");
 
 //@comments: Se lee el entorno al que se esta trantado de autenticar
 const [, , environment, nulldev] = process.argv;

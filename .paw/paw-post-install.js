@@ -1,7 +1,7 @@
 const { createInterface } = require("readline");
 const { copyFileSync, readFile, writeFileSync } = require("fs");
-const { colors, homedir } = require("./constants");
 const { join } = require("path");
+const { colors, homedir } = require("./constants");
 
 const __maindir__ = process.cwd();
 const { env, platform } = process;

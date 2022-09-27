@@ -3,8 +3,8 @@
 	"version": "1.0.0",
 	"description": "Awesome sdf account customization project",
 	"scripts": {
-		"postinstall": "husky install && node .paw/post-install.js",
-		"account:auth": "node .paw/auth-to-account.js"
+		"postinstall": "husky install && node .paw/paw-post-install.js",
+		"account:auth": "node .paw/paw-auth-to-account.js"
 	},
 	"repository": {
 		"type": "git",
