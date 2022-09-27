@@ -6,7 +6,7 @@ const { spawnSync } = require("child_process");
 const [, , environment, nulldev] = process.argv;
 
 if (!environment) {
-    console.error(colors.error, `The command need a NetSuite environment for a new authentication`);
+    console.error(colors.error, "The command need a NetSuite environment for a new authentication");
     process.exit(1);
 }
 
